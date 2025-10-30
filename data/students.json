@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "student_id": "1230729",
+        "name": "Cristina Damias",
+        "age": "21",
+        "course": "BSIT",
+        "year_level": "3"
+    }
+]
