@@ -1,8 +1,7 @@
-# src/services/student_service.py
-
 import json
 import os
 from src.models.student import Student
+from src.utils.logger import log_action
 
 
 class StudentService:
@@ -34,6 +33,7 @@ class StudentService:
         students.append(student)
         self.save_students(students)
         print("✅ Student added successfully!")
+        log_action("Added student", student.student_id)
 
     def view_students(self):
         """Display all students."""
@@ -61,6 +61,7 @@ class StudentService:
             print("❌ Student not found.")
         else:
             self.save_students(students)
+            log_action("Updated student", student_id)
 
     def delete_student(self, student_id):
         """Delete a student by ID."""
@@ -71,3 +72,4 @@ class StudentService:
             return
         self.save_students(new_students)
         print("✅ Student deleted successfully!")
+        log_action("Deleted student", student_id)
